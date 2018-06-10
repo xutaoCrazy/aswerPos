@@ -27,7 +27,7 @@ export default {
 }
 .main{
   float: left;
-  background: chocolate;
+  /* background: chocolate; */
   height: 100%;
   width: 95%;
 }
