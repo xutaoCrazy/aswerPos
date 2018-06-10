@@ -1,12 +1,18 @@
 <template>
   <div id="app">
-    <router-view/>
+    <leftnav></leftnav>
+    <div class='main'>
+        <router-view/>
+    </div>
   </div>
 </template>
-
 <script>
+import leftnav from '@/components/common/leftNav'
 export default {
-  name: 'App'
+  name: 'app',
+  components: {
+    leftnav
+  }
 }
 </script>
 
@@ -17,6 +23,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%
+}
+.main{
+  float: left;
+  background: chocolate;
+  height: 100%;
+  width: 95%;
 }
 </style>

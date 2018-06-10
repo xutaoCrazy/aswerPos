@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import pos from '@/components/Pos'
+import pos from '@/components/page/Pos'
 
 Vue.use(Router)
 

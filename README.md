@@ -1,30 +1,15 @@
-# pos
+1. 2018年六月十号 开始做项目
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+##### 项目设计图初稿
+![image](https://github.com/xutaoCrazy/aswerPos/blob/master/src/assets/pos.png)
+    
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+graph TD
+    A[首页]--> b(左侧导航栏)
+    A[首页]--> c(结账)
+    A[首页]--> d(食品区域)
+    b(左侧导航栏)--> 收银,会员统计
+    c(结账)--> 结账,挂单,外卖
+    d(食品区域)-->  热销食品,选择食品
+```
+>完成侧边导航栏功能
