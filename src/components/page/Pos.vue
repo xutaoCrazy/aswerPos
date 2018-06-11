@@ -17,7 +17,7 @@
 
                    </el-table>
                    <div class='div-btn'>
-                     <el-button type='warning'>挂单</el-button>
+                     <el-button type='warning' @click='add'>挂单</el-button>
                      <el-button type='danger'>删除</el-button>
                      <el-button type='success'>结账</el-button>
                    </div>
@@ -55,31 +55,36 @@ export default {
   name: 'pos',
   data () {
     return {
-      tableData: [{
-        goodsName: '可口可乐',
-        price: 8,
-        count: 1
-      },
-      {
-        goodsName: '香辣鸡腿堡',
-        price: 15,
-        count: 1
-      },
-      {
-        goodsName: '爱心薯条',
-        price: 8,
-        count: 1
-      },
-      {
-        goodsName: '甜筒',
-        price: 8,
-        count: 1
-      }]
+      tableData: ''
     }
   },
   mounted: function () {
     var oderheight = document.body.clientHeight
     document.getElementById('order-list').style.height = oderheight + 'px'
+  },
+  methods: {
+    add () {
+      var url = "http://127.0.0.1:8088/get";
+      var $this = this;
+      this.$ajax({
+        method: "get",
+        url: url
+      }).then(function(res) {
+        console.log(res.data);
+        $this.tableData=res.data;
+      });
+    }
+  },
+   created () {
+    var url = "http://127.0.0.1:8088/get";
+      var $this = this;
+      this.$ajax({
+        method: "get",
+        url: url
+      }).then(function(res) {
+        console.log(res.data);
+        $this.tableData=res.data;
+      });
   }
 }
 </script>
