@@ -9,7 +9,7 @@
                      <el-table-column prop="count" label="数量" width='50' ></el-table-column>
                      <el-table-column prop="price" label="单价" width='70'></el-table-column>
                      <el-table-column  label="操作" fixed='right' width='100'>
-                       <template scope='scope'>
+                       <template slot-scope='scope'>
                         <el-button type='text'  size='small'  @click.native.prevent="deleteRow(scope.$index, tableData)">删除</el-button>
                         <el-button type='text'  size='samll' @click='addGoodlis(scope.row)'>增加</el-button>
                        </template>
@@ -152,7 +152,7 @@ export default {
       this.money = 0
     },
     checkout () {
-      if (this.count != 0 ) {
+      if (this.count !== 0) {
         this.tableData = []
         this.count = 0
         this.money = 0
@@ -182,7 +182,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .pos-bord{
     background-color: #f9fafc;
     border-right: 1px solid #c0ccda;
